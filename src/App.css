@@ -1,0 +1,121 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro&PT+Sans+Narrow);
+
+
+body {
+  background-color: rgb(180, 180, 236);
+}
+
+
+h1 {
+ font-family: "source code pro";
+ margin-left: 10px;
+}
+
+h2 {
+  font-family: "PT sans narrow";
+ }
+ h3 {
+  font-family: "PT sans narrow";
+ }
+ h4 {
+  font-family: "PT sans narrow";
+ }
+   
+
+ 
+.postPic {
+  height: 110px;
+  width: 60%;
+  display: block;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 10px;
+  border: 1px solid black;
+}
+
+
+.postContainer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 300px;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom:10px;
+}
+
+.post {
+  border: 1px solid black; 
+  box-sizing: border-box;
+    margin: auto; 
+    background-color: rgb(150, 140, 223);
+    justify-content: space-around;
+    word-wrap: break-word;
+    height: 250px;
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+
+.postText {
+align-items: center;
+justify-content: center;
+}
+
+.postAuthor {
+  flex: wrap;
+  padding: 5px;
+  font-size: 10px;
+}
+
+.postTags {
+  font-size: 10px;
+  padding-left: 5px;
+  text-align: justify;
+
+}
+
+.postDescription {
+  font-size: 10px;
+  text-align: left;
+  padding-left: 5px;
+}  
+
+.postTitle{
+  font-size: 10px;
+  text-align: left;
+  padding-left: 5px;
+}
+
+@media screen and (min-width: 300px) and (max-width: 660px) {
+  .post {
+    width: 80%; 
+  }
+}
+
+@media screen and (min-width: 660px)  and (max-width: 1000px) {
+  .post {
+    width: 48%;
+  }
+}
+@media screen and (min-width: 1000px)  and (max-width: 1400px) {
+  .post {
+      width: 31%;
+  }
+}
+@media screen and (min-width: 1400px)and (max-width: 1900px)  {
+  .post {
+      width:23%;    
+  }
+}
+@media screen and (min-width: 1900px) and (max-width: 2400px) {
+  .post {
+      width: 18%;    
+  }
+}
+@media screen and (min-width: 2400px) {
+  .post {
+      width: 8%;    
+  }
+}
