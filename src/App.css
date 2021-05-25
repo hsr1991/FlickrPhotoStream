@@ -49,11 +49,10 @@ h2 {
 .post {
   border: 1px solid black;
   box-sizing: border-box;
-  height: 350px;
+  height: 340px;
   margin: auto;
   background-color: rgb(150, 140, 223);
   justify-content: space-around;
-
   margin-top: 10px;
   margin-bottom: 10px;
 

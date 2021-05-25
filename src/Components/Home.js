@@ -71,7 +71,7 @@ function Home() {
                 <div className="grid-container"> {
                     postData.map(postobject => {
                         var tagstring = postobject.tags;
-                        var tags = tagstring.replace(' ', ' #');
+                        var tags = tagstring.replaceAll(' ', ' #');
                         var shorttags = tags.substring(0, 50);
                         var description = postobject.description._content
                         var shortdescription = description.substring(0, 110) + "...";
