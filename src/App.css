@@ -1,66 +1,69 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro&PT+Sans+Narrow);
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&PT+Sans+Narrow');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 
 body {
   background-color: rgb(180, 180, 236);
 }
 
-
 h1 {
  font-family: "source code pro";
  margin-left: 10px;
+ margin-right:10px;
+ align-items: center;
+ text-align: center;
+
 }
 
 h2 {
-  font-family: "PT sans narrow";
+  font-family: "Roboto";
  }
  h3 {
-  font-family: "PT sans narrow";
+  font-family: "Roboto";
  }
- h4 {
-  font-family: "PT sans narrow";
- }
-   
 
- 
+
 .postPic {
-  height: 110px;
-  width: 60%;
-  display: block;
-  margin: auto;
-  margin-top: 5%;
-  margin-bottom: 10px;
+  height: 200px;
+  width: 250px;
+  margin-top: 10px;
+  margin-bottom: 2px;
+  margin-left: 25px;
   border: 1px solid black;
+
 }
 
 
-.postContainer {
+.grid-container {
   position: relative;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: 300px;
-  justify-content: space-around;
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom:10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 450px;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .post {
-  border: 1px solid black; 
+  border: 1px solid black;
   box-sizing: border-box;
-    margin: auto; 
-    background-color: rgb(150, 140, 223);
-    justify-content: space-around;
-    word-wrap: break-word;
-    height: 250px;
-    margin-top: 10px;
-    margin-bottom:10px;
+  height: 330px;
+  margin: auto;
+  background-color: rgb(150, 140, 223);
+  justify-content: space-around;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+
 }
 
 .postText {
 align-items: center;
 justify-content: center;
+inline-size: 300px;
+overflow-wrap: break-word;
 }
 
 .postAuthor {
@@ -73,6 +76,7 @@ justify-content: center;
   font-size: 10px;
   padding-left: 5px;
   text-align: justify;
+  font-family: "Shadows+Into+Light";
 
 }
 
@@ -83,39 +87,100 @@ justify-content: center;
 }  
 
 .postTitle{
-  font-size: 10px;
-  text-align: left;
+  font-size: 12px;
   padding-left: 5px;
+
 }
 
-@media screen and (min-width: 300px) and (max-width: 660px) {
-  .post {
-    width: 80%; 
-  }
+.search-bar{
+text-align: center;
 }
 
-@media screen and (min-width: 660px)  and (max-width: 1000px) {
-  .post {
-    width: 48%;
+@media screen and (min-width: 600px)  and (max-width: 800px) {
+  .grid-container{
+      column-count: 2;
+  }
+
+  h1 {
+    text-align: left;
+    padding-left: 10px ;
+  } 
+  .search-bar{
+  text-align: left;
+  padding-left: 15px;
   }
 }
-@media screen and (min-width: 1000px)  and (max-width: 1400px) {
-  .post {
-      width: 31%;
+@media screen and (min-width: 800px)  and (max-width: 1000px) {
+  .grid-container{
+      column-count: 3;
   }
+
+  h1 {
+    text-align: left;
+    padding-left: 20px;
+  }
+  .search-bar{
+    text-align: left;
+    padding-left: 30px;
+    }
 }
-@media screen and (min-width: 1400px)and (max-width: 1900px)  {
-  .post {
-      width:23%;    
+@media screen and (min-width: 1000px)and (max-width: 1200px)  {
+  .grid-container{
+      column-count: 4;    
   }
+
+  h1 {
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .search-bar{
+    text-align: left;
+    padding-left: 30px;
+    }
 }
-@media screen and (min-width: 1900px) and (max-width: 2400px) {
-  .post {
-      width: 18%;    
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .grid-container{
+      column-count: 5;    
   }
+
+  h1 {
+    text-align: left;
+    padding-left: 16px;
+  
+  }
+
+  .search-bar{
+    text-align: left;
+    padding-left: 24px;
+    }
 }
-@media screen and (min-width: 2400px) {
-  .post {
-      width: 8%;    
+@media screen and (min-width: 1400px) {
+  .grid-container{
+      column-count: 6;    
   }
+
+  h1 {
+    text-align: left;
+  }
+
+  .search-bar{
+    text-align: left;
+    padding-left: 10px;
+    }
+}
+@media screen and (min-width: 1700px) and (max-width: 1800px) {
+  .grid-container{
+      column-count: 7;    
+  }
+
+  h1 {
+    text-align: left;
+    padding-left: 12px;
+  }
+
+  .search-bar{
+    text-align: left;
+    padding-left: 20px;
+    }
 }
