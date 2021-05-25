@@ -60,11 +60,11 @@ function Home() {
 
     else {
         return (
-            <div>
+            <div data-testid='content'>
                 <h1> Flickr Photo Stream </h1>
                 <div class='search-bar'>
                     <form onSubmit={handleSubmit}>
-                        <input type="search" placeholder="Search photos" aria-label="Search" onChange={handleChange} />
+                        <input type="search" data-testid='search-bar-input' placeholder="Search photos" aria-label="Search" onChange={handleChange} />
                         <button type="submit" >Search</button>
                     </form>
                 </div>
@@ -78,7 +78,7 @@ function Home() {
                         var shorttitle = postobject.title.substring(0, 50);
 
                         return (
-                            <div className="post" key={postobject.id}>
+                            <div className="post" data-testid='post' key={postobject.id}>
                                 <img src={postobject.url_m} alt={postobject.title} width="30" height="23" className="postPic" />
                                 <div className="postText">
                                     <h2 className="postTitle"> <a href={'https://www.flickr.com/photos/' + postobject.owner + '/' + postobject.id} target='_blank'>{shorttitle}</a> Posted by <a href={'https://www.flickr.com/photos/' + postobject.owner} target='_blank'>{postobject.ownername}</a></h2>
