@@ -49,7 +49,7 @@ h2 {
 .post {
   border: 1px solid black;
   box-sizing: border-box;
-  height: 330px;
+  height: 350px;
   margin: auto;
   background-color: rgb(150, 140, 223);
   justify-content: space-around;

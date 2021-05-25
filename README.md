@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+You will need to run a npm install . You will need to create a file titled .env in the project root folder. In the .env file you should type REACT_APP_API_KEY=xxxxxxxxxxxxxxxxxxxxxx . Replace the 'xxxxxxxxxxxxxxxxxxxxxx' with your own API key which you can generate from here Once you have added your own API key and done an npm install, you can run the app by executing npm start .
 
 ## Available Scripts
 
