@@ -4,24 +4,24 @@ var $ = require("jquery");
 function Home() {
     const [postData, setPostData] = useState(null);
     const [searchQuery, setSearchQuery] = useState('london');
-    const [loadMore, setLoadMore] = useState(1);
     const [pageNumber, setPageNumber] = useState(1);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        loadMore()
+    }, []);
+
+    const loadMore = () => {
         setLoading(true);
-        getData(loadMore);
-    }, [loadMore]);
+        getData();
+    }
 
-
-    const getData = (load) => {
-        if (load) {
+    const getData = () => {
             fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${process.env.REACT_APP_API_KEY}&format=json&page=${pageNumber}&lang?en&safe_search=1&text=${searchQuery}&extras=owner_name,url_s,url_m,url_l,date_taken,description,tags&nojsoncallback=1`)
                 .then(response => response.json())
-                .then(setPageNumber(pageNumber + 1))
-                .then(response => handlePostData(response))
-                .then(setLoading(false));
-        }
+                .then(response => {setPageNumber(pageNumber + 1)
+                    setLoading(false)
+                    handlePostData(response)})
     };
 
     function handlePostData(response) {
@@ -36,33 +36,31 @@ function Home() {
     useEffect(() => {
         const handleScroll = () => {
             if (($(window).scrollTop() + $(window).height() > $(document).height() - 600) && (loading === false)) {
-                setLoadMore(loadMore + 1)
+                loadMore();
             }
-        }
+        };
         window.addEventListener('scroll', handleScroll);
-
     }, [postData]);
 
-    const handleChange = event => {
+    const handleChange = (event) => {
         setSearchQuery(event.target.value);
     };
 
-    const handleSubmit = event => {
+    const handleSubmit = (event) => {
         event.preventDefault();
         setPostData(null);
         setPageNumber(1);
-        setLoadMore(loadMore + 1);
+        loadMore();
     };
 
     if (!postData) {
         return <div> Waiting for data!</div>
     }
-
     else {
         return (
             <div data-testid='content'>
                 <h1> Flickr Photo Stream </h1>
-                <div class='search-bar'>
+                <div className='search-bar'>
                     <form onSubmit={handleSubmit}>
                         <input type="search" data-testid='search-bar-input' placeholder="Search photos" aria-label="Search" onChange={handleChange} />
                         <button type="submit" >Search</button>
@@ -79,7 +77,7 @@ function Home() {
 
                         return (
                             <div className="post" data-testid='post' key={postobject.id}>
-                                <img src={postobject.url_m} alt={postobject.title} width="30" height="23" className="postPic" />
+                                <img src={postobject.url_m} alt={postobject.title} loading="lazy" className="postPic" />
                                 <div className="postText">
                                     <h2 className="postTitle"> <a href={'https://www.flickr.com/photos/' + postobject.owner + '/' + postobject.id} target='_blank'>{shorttitle}</a> Posted by <a href={'https://www.flickr.com/photos/' + postobject.owner} target='_blank'>{postobject.ownername}</a></h2>
                                     <p className="postDescription">{shortdescription}</p>
