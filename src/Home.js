@@ -17,11 +17,13 @@ function Home() {
     }
 
     const getData = () => {
-            fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${process.env.REACT_APP_API_KEY}&format=json&page=${pageNumber}&lang?en&safe_search=1&text=${searchQuery}&extras=owner_name,url_s,url_m,url_l,date_taken,description,tags&nojsoncallback=1`)
-                .then(response => response.json())
-                .then(response => {setPageNumber(pageNumber + 1)
-                    setLoading(false)
-                    handlePostData(response)})
+        fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${process.env.REACT_APP_API_KEY}&format=json&page=${pageNumber}&lang?en&safe_search=1&text=${searchQuery}&extras=owner_name,url_s,url_m,url_l,date_taken,description,tags&nojsoncallback=1`)
+            .then(response => response.json())
+            .then(response => {
+                setPageNumber(pageNumber + 1)
+                setLoading(false)
+                handlePostData(response)
+            })
     };
 
     function handlePostData(response) {
